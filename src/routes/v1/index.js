@@ -6,6 +6,7 @@ const config = require('../../config/config');
 const commentRoute = require('./comment.route');
 const profileRoute = require('./profile.route');
 const storyRoute = require('./story.route');
+const chatRoute = require('./chat.route');
 const router = express.Router();
 
 const defaultRoutes = [
@@ -14,7 +15,8 @@ const defaultRoutes = [
   { path: '/post', route: postRoute },
   { path: '/comment', route: commentRoute },
   { path: '/profile', route: profileRoute },
-  {path:'/story', route: storyRoute}
+  { path: '/story', route: storyRoute },
+  {path:'/chat',route:chatRoute },
   
   
 ];

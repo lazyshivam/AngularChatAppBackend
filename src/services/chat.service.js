@@ -19,7 +19,7 @@ const updateMessageById = async (messageId, updateData) => {
 
   const messages = await ChatModel.findByIdAndUpdate({ _id: messageId }, updateData, { new: true });
   if (!messages) {
-    return { data: messages, code: CONSTANT.BAD_REQUEST, message: CONSTANT.NOT_FOUND_MSG }
+    return { data: {}, code: CONSTANT.BAD_REQUEST, message: CONSTANT.NOT_FOUND_MSG }
   }
   return { data: messages, code: CONSTANT.SUCCESSFUL, message:"Message updated successfully"}
 };
@@ -27,7 +27,7 @@ const updateMessageById = async (messageId, updateData) => {
 
 const deleteMessageById = async (messageId) => {
 
-  const message = await CommentModel.findByIdAndDelete({ _id: messageId });
+  const message = await ChatModel.findByIdAndDelete({ _id: messageId });
   if (!message) {
     return { data: {}, code: CONSTANT.BAD_REQUEST, message: CONSTANT.NOT_FOUND_MSG }
   }
